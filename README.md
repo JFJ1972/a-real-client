@@ -4,7 +4,7 @@
 
 
 <h2>Objetivo del proyecto</h2>
-<p>Desarrrollar aplicacion con React que mediante una interfaz interactiva reciba los inputs del usuario y se los entregué al dueño del comercio como un pedido digital mediante Whastapp.</br>
+<p>Desarrrollar aplicacion con React que mediante una interfaz interactiva reciba los inputs del usuario y se los entregué al dueño del comercio como un pedido digital mediante Whatsapp.</br>
 Se entrega como evaluacion para Educamas y su bootcamp "Programate", y como apropiacion de conocimientos de la primera fase que correspondio a Front-end.</p> 
 
    
