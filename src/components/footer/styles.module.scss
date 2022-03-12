@@ -1,0 +1,23 @@
+.footer{
+height: 5vh;
+width: 100vw;
+display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: #a7a7a7;
+color: #294494;
+position: absolute;
+bottom: 0;
+}
+
+@media (min-width: 480px) {
+        .footer{
+        font-size: 20px;
+        }    
+}
+
+@media (min-width: 640px) {
+        .footer{
+        font-size: 30px;
+        } 
+}

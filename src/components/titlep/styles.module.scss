@@ -1,0 +1,31 @@
+.titlep{
+    font-size: 13px;
+    color: #294494;
+    text-align: center;
+    
+    .img3{
+        width: 45px;
+        
+}
+    .img4{
+        width: 150px;
+        margin-top: 0.1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px #363837a4;
+
+    }
+}    
+
+
+
+@media (min-width: 640px) {
+    .titlep{
+    font-size: 20px;
+    }
+    .titlep .img3{
+    width: 70px;
+    }
+    .titlep .img4{
+    width: 275px;
+    } 
+}

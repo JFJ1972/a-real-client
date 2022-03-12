@@ -1,0 +1,69 @@
+.contenedor {
+  width: 100vw;
+  max-width: 320px;
+  height: 4rem;
+  /*overflow: hidden;*/
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: fixed;
+  background-color: #7A7A7A;
+  z-index: 2;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.people {
+  color: #b15583;
+  font-size: 21px;
+}
+
+.gopeople {
+  color: #5584b1;
+  font-size: 5px;
+}
+
+.house {
+  color: #294494;
+  font-size: 21px;
+}
+
+.gohouse {
+  color: #294494;
+  font-size: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+header ul li {
+  padding: 0 0.3rem;
+}
+
+header .cart {
+  position: relative;
+  cursor: pointer;
+}
+/*# sourceMappingURL=header.css.map */

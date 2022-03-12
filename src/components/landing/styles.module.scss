@@ -1,0 +1,20 @@
+.first{
+    background: url(../../assets/Logobb.jpg) no-repeat center center fixed;
+    background-size: cover;
+    width: 100vw;
+    max-width: 1640px;
+    height: 84vh;
+    background-color: #c9e9e6;
+    position: absolute;
+    bottom: 5vh;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.log {
+    position: relative;
+    width: 7rem;
+    display: flex;
+    display: none;
+}   
