@@ -32,7 +32,7 @@ const Cart = () => {
     var nombre = "";
     var cantidad = "";
     var precio = "";
-    if (productList.length == 0 ){
+    if (productList.length === 0 ){
       console.log("agregar");
       return;
     }else{
