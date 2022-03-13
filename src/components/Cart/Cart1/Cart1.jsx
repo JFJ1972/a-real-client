@@ -40,6 +40,7 @@ con window.open se copia en el api.*/
       /*console.log("agregar")*/;
       return;
     }else{
+      
       productList.map(it => {
         //console.log(it);
         nombre = it.name;
@@ -53,6 +54,7 @@ con window.open se copia en el api.*/
     items.push("El valor de tu orden es: " + total);
     msg = items.toString(); 
     window.open("https://wa.me/573004353916/?text="+encodeURIComponent(msg));
+    return;
   };
 
   
