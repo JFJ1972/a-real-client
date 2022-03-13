@@ -1,6 +1,6 @@
 {
   "name": "real-client",
-  "homepage":"https://JFJ1972.github.io/a-real-client",
+  "homepage": "https://JFJ1972.github.io/a-real-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

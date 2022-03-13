@@ -1,0 +1,26 @@
+.first {
+  background: url(../../assets/Logobb.jpg) no-repeat center center fixed;
+  background-size: cover;
+  width: 100vw;
+  max-width: 1640px;
+  height: 84vh;
+  background-color: #c9e9e6;
+  position: absolute;
+  bottom: 5vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.log {
+  position: relative;
+  width: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+}
+/*# sourceMappingURL=styles.module.css.map */
