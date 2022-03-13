@@ -1,3 +1,42 @@
+
+<h1>Un Cliente Real</h1>
+
+
+
+<h2>Objetivo del proyecto</h2>
+<p>Desarrrollar aplicacion con React que mediante una interfaz interactiva reciba los inputs del usuario y se los entregué al dueño del comercio como un pedido digital mediante Whatsapp.</br>
+Se entrega como evaluacion para Educamas y su bootcamp "Programate", y como apropiacion de conocimientos de la primera fase que correspondio a Front-end.</p> 
+
+   
+<h2>Desarrollo</h2>
+
+<p>La ejecución del proyecto se planteó mediante un Product Backlog elaborado en Trello https://trello.com/b/yZv2CgxB/un-cliente-real</p>
+
+![Backlog jpg](https://user-images.githubusercontent.com/97111500/158034797-e500276c-c170-4b8f-84fa-545b5d222dd0.png)
+
+
+<p>La arquitectura de carpetas y arquitectura se elaboro en Figma, al igual que el Mockup</P>
+
+![Un cliente real Carpetas](https://user-images.githubusercontent.com/97111500/158035137-d09aaddc-27a6-4797-8290-9f7779e1ac25.jpg)
+
+<p>El mockup junto con su prototipo y el planteamieto de arquitectura y carpetas pueden verse en https://www.figma.com/files/recent?fuid=1052684805845202078</p>
+
+![iPhone SE - 1](https://user-images.githubusercontent.com/97111500/158035314-19f62f31-d96b-4282-b8ab-e182948708e2.png)
+
+<p>El desarrollo se realizó con ReactApp <img src="https://user-images.githubusercontent.com/97111500/154511207-4f81cf14-621e-4b5c-aae8-3dffc219ceeb.png" min-width="20px" max-width="20px" width="20px" align="center" alt="Computador">, El mensaje de pedido es enviado mediante api de whatsapp <img src="https://user-images.githubusercontent.com/97111500/158035842-b3447c80-b7e4-4dc6-a40f-02f22721c3ee.png" min-width="20px" max-width="20px" width="20px" align="center" alt="Computador"> https://wa.me/**numerocelquerecibemensaje**/
+  
+<p>Se utilizo en gran parte del proyecto el metodo Grid a fin de hacer el sitio responsive, el contenido se desarrollo como Mobile-first aplicando estilos mediante sass. <img src="https://user-images.githubusercontent.com/97111500/158035663-dee02c13-4423-4d81-bf34-aea67ba57a27.png"  min-width="20px" max-width="20px" width="20px" align="center" alt="Computador"> </p>
+
+<p>La informacion necesaria se obtuvo de:</br>
+https://github.com/Mauro069/Carrito-de-compras.git</br>
+Video tutorial en: https://youtu.be/ywvsztMU_oM</br>
+developer.mozilla.org</br>
+stackoverflow.com</br>
+https://css-tricks.com/snippets/css/complete-guide-grid/</br>
+<a href="https://www.flaticon.com/free-icons/sass" title="sass icons">Sass icons created by Freepik - Flaticon</a>
+</p> 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
