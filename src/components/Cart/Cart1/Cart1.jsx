@@ -37,7 +37,7 @@ con window.open se copia en el api.*/
     var cantidad = "";
     var precio = "";
     if (productList.length === 0 ){
-      console.log("agregar");
+      /*console.log("agregar")*/;
       return;
     }else{
       productList.map(it => {
