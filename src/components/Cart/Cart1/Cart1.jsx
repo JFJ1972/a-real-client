@@ -7,13 +7,14 @@ import img6 from "../../../assets/logowhatsapp.jpg"
 const Cart = () => {
   /* Creamos 2 estados, uno para ver si el carrito esta abierto o no 
   y otro para obtener la cantidad de productos que tenemos en el carrito */
-  const [cartOpen, setCartOpen] = useState(false);
-  const [productsLength, setProductsLength] = useState(0);
+  const [cartOpen, setCartOpen] = useState(false);/*este simpre arranca en falso*/
+  const [productsLength, setProductsLength] = useState(0);/*aqui se sabe el numero de productos que hay en el carro y arranca en cero para que el primer item agregado no sea cero*/
 
   /* Traemos del context los productos del carrito */
   const { cartItems } = useContext(CartContext);    
 
-  /* Cada vez que se modifica el carrito, actualizamos la cantidad de productos */
+  /* Cada vez que se modifica el carrito, 
+  actualizamos la cantidad de productos, al previous se le suma el current-actual*/
   useEffect(() => {
     setProductsLength(
       cartItems.reduce((previous, current) => previous + current.amount, 0)
@@ -25,6 +26,9 @@ const Cart = () => {
     (previous, current) => previous + current.amount * current.price,
     0
   );
+/* para enviar el mensaje se crea variable y se le pasa productList que recibe .name .price .amount, 
+se verifica si tiene items, y se mapea para construir el mensaje concatenado. 
+con window.open se copia en el api.*/ 
 
   const sendWhatsAppMessage = (productList)=>{
     var msg = "";
@@ -41,12 +45,12 @@ const Cart = () => {
         nombre = it.name;
         precio = it.price;
         cantidad = it.amount;        
-        msg = "Producto "+nombre+" cantidad: "+cantidad+ ", precio por unidad: "+precio;
+        msg = "Producto "+ nombre +" cantidad: "+ cantidad + ", precio por unidad: " + precio;
         //console.log(msg);
         items.push(msg);
       })            
     }
-    items.push("El total del pedido es de: "+total);
+    items.push("El valor de tu orden es: " + total);
     msg = items.toString(); 
     window.open("https://wa.me/573004353916/?text="+encodeURIComponent(msg));
   };
@@ -102,14 +106,15 @@ const Cart = () => {
       </div>
 
       {cartItems && cartOpen && (
-        <div className={styles.cart}>
+      /* con un operaador ternario se indica al usuario si tiene productos o no*/
+      <div className={styles.cart}>
           <h2>Lo quieres..</h2>
 
-          {cartItems.length === 0 ? (
+          {cartItems.length === 0 ? /*la longitud de cart items es cero*/(
             <p className={styles.cartVacio}>
               Date Gusto! <br /> tu carrito esta vacio!{" "}
             </p>
-          ) : (
+          ) : (/* si no mapea los items del arreglo cartItems*/
             <div className={styles.productsContainer}>
               {cartItems.map((item, i) => (
                 <ItemCart key={i} item={item} />
@@ -122,7 +127,7 @@ const Cart = () => {
             <br />
             tu solicitud:
                             <div className={styles.contfin}>
-                              <button onClick={()=>sendWhatsAppMessage(cartItems)} className={styles.btnfin}>
+                              <button onClick={()=>/*al evento va a la funcion linea 30*/sendWhatsAppMessage(cartItems)} className={styles.btnfin}>
                                 <img className={styles.logowapp} src={img6} alt="" />
                               </button>                              
                             </div>

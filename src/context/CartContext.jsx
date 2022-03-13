@@ -1,16 +1,24 @@
 import { createContext, useEffect, useState } from "react";
+/*se importan los hooks que provee react, permiten añadir estados a las funciones, 
+es decir estas los reciben y se renderizan por defecto */ 
+
 
 /* Creamos el context, se le puede pasar un valor inicial */
 const CartContext = createContext();
-
+/* luego se crea y se exporta CartProvider que permitira envolver los componentes que
+requieran su uso como ejemplo un div aqui...children*/
 export const CartProvider = ({ children }) => {
-  /* Creamos un estado para el carrito */
+  /* se crean los estados que va recibir el carrito cartitems y setcartitems; 
+  luego se recibe el usestate el carrito */
   const [cartItems, setCartItems] = useState(() => {
+    
+    /*para luego a traves de try/catch se verifique si hay o no productos en el carrito y no
+    se pierdan =)usando localstorage. la comparacion se hace con un operador ternario.*/
+    
     try {
       
-/* Verificamos si hay productos en el local storage,
-      si hay algo lo parseamos porque se guarda como string 
-      y si no hay nada devolvemos un array vacio */
+/* Verificamos si hay productos en el local storage,si hay algo lo parseamos (ya que se necesita
+  un objeto) porque se guarda como string y si no hay nada o hay un error se devuelve un array vacio */
 
       const productosEnLocalStorage = localStorage.getItem("cartProducts");
       return productosEnLocalStorage ? JSON.parse(productosEnLocalStorage) : [];
@@ -19,20 +27,24 @@ export const CartProvider = ({ children }) => {
     }
   });
 
-  /* Cada vez que se actualize el carrito seteamos el local storage para guardar los productos */
+  /* con useEffect cada vez que se actualize el carrito seteamos el local storage 
+  para guardar los productos */
   useEffect(() => {
+    /*el localstore solo recibe string por lo que se le aplica stringify*/
     localStorage.setItem("cartProducts", JSON.stringify(cartItems));
   }, [cartItems]);
 
   /* Creamos la funcion para agregar productos al carrito */
   const AddItemToCart = (product) => {
-    /* Recibimos un producto y nos fijamos si ya esta en el carrito */
+    
+    /* Recibimos un producto y nos fijamos si ya esta en el carrito con productincart */
     const inCart = cartItems.find(
       (productInCart) => productInCart.id === product.id
     );
 
-    /* Si el producto se encuentra en el carrito, recorremos el carrito
-    y al producto le sumamos uno a la cantidad, sino retornamos el carrito como estaba */
+    /* Si el producto se encuentra en el carrito, recorremos el carrito con 
+    -if-(if-else)-else- todo en un solo proceso;y al producto 
+    le sumamos uno a la cantidad (amount) , sino retornamos el carrito como estaba */
     if (inCart) {
       setCartItems(
         cartItems.map((productInCart) => {
@@ -54,9 +66,11 @@ export const CartProvider = ({ children }) => {
       (productInCart) => productInCart.id === productId
     );
 
-    /* Si la cantidad del producto es igual a 1, filtramos el carrito y lo sacamos */
+    /* Si la cantidad del producto es igual a 1, filtramos el carrito y lo sacamos, 
+    es decir este item se elimina del carrito */
     if (inCart.amount === 1) {
       setCartItems(
+        /*Retorna todos los que nos iguales al id, a los iguales aplica el else que sigue.. */
         cartItems.filter((productInCart) => productInCart.id !== productId)
       );
     } else {
@@ -73,10 +87,9 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    /* Envolvemos el children con el provider y le pasamos un objeto con las propiedades que necesitamos por value */
-    <CartContext.Provider
-      value={{ cartItems, AddItemToCart, DeleteItemToCart }}
-    >
+    /* Envolvemos el children con el provider y le pasamos un objeto 
+    con las propiedades que necesitamos por value. ver linea 8 */
+    <CartContext.Provider value={{ cartItems, AddItemToCart, DeleteItemToCart }}>
       {children}
     </CartContext.Provider>
   );
