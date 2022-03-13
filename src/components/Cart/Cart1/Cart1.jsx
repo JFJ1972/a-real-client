@@ -41,7 +41,7 @@ con window.open se copia en el api.*/
       return;
     }else{
       
-      productList.map(it => {
+      productList.forEach(it => {
         //console.log(it);
         nombre = it.name;
         precio = it.price;
